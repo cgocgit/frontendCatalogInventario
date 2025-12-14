@@ -1,0 +1,212 @@
+/* ============================================
+   MESA REGIA — ESTILO A
+   PREMIUM BLACK + GOLD
+   ============================================ */
+
+/* ------------------ VARIABLES ------------------ */
+:root {
+    --mr-gold: #D4AF37;
+    --mr-gold-dark: #B38A2A;
+    --mr-gold-soft: #C8A55A;
+    --mr-black: #000000;
+    --mr-carbon: #121212;
+    --mr-white: #FFFFFF;
+
+    --font-primary: "Cinzel", serif;
+    --font-secondary: "Lato", sans-serif;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 56px;
+    --space-7: 72px;
+
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    --shadow-soft: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* ------------------ RESET ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background: var(--mr-black);
+    color: var(--mr-white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ------------------ LAYOUT ------------------ */
+.layout {
+    flex: 1;
+    display: flex;
+}
+
+/* ------------------ SIDEBAR ------------------ */
+.sidebar {
+    width: 240px;
+    background: var(--mr-carbon);
+    padding: var(--space-4);
+    border-right: 1px solid var(--mr-gold-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.menu-title {
+    color: var(--mr-gold);
+    font-family: var(--font-primary);
+    font-size: 22px;
+    margin-bottom: var(--space-3);
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: var(--space-2);
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--mr-white);
+    font-size: 16px;
+    padding: var(--space-1) 0;
+    display: block;
+    transition: 0.25s ease;
+}
+
+.menu a:hover {
+    color: var(--mr-gold);
+    padding-left: var(--space-2);
+}
+
+/* ------------------ MAIN AREA ------------------ */
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===============================================
+   HEADER COMPLETO — Estilo A (Black/Gold)
+   =============================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--mr-black);
+    color: var(--mr-gold);
+    padding: 14px 20px;
+    border-bottom: 2px solid var(--mr-gold);
+    height: 85px;
+}
+
+.header h1 {
+    font-family: var(--font-primary);
+    color: var(--mr-gold);
+    font-size: 28px;
+}
+
+/* LOGO Y NOMBRE */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-logo {
+    height: 55px;
+}
+
+.header-title {
+    font-family: var(--font-primary);
+    font-size: 26px;
+    margin: 0;
+}
+
+/* TÍTULO DINÁMICO DE SECCIÓN */
+.header-section-title {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* LADO DERECHO */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.header-info {
+    font-size: 13px;
+    text-align: right;
+    opacity: 0.8;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.profile-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--mr-gold);
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid var(--mr-gold);
+    color: var(--mr-gold);
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: var(--mr-gold);
+    color: var(--mr-black);
+}
+
+/* ------------------ CONTENT ------------------ */
+.content {
+    padding: var(--space-4);
+    flex: 1;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 200px);
+    border: none;
+    background: var(--mr-carbon);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+/* ------------------ FOOTER ------------------ */
+.footer {
+    background: var(--mr-carbon);
+    color: var(--mr-white);
+    text-align: center;
+    padding: var(--space-2);
+    border-top: 1px solid var(--mr-gold-soft);
+    font-size: 14px;
+}

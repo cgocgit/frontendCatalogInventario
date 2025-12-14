@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Servicio</title>
+
+    <!-- Seleccionar solo uno -->
+    <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+    <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+
+</head>
+<body>
+
+    <h2>Registro de Servicio</h2>
+
+    <form class="form">
+
+        <div class="form-row">
+            <label>Código:</label>
+            <input type="text" class="input">
+            
+            <label>Nombre:</label>
+            <input type="text" class="input">
+        </div>
+
+        <div class="form-row">
+            <label>Tipo:</label>
+            <select class="input">
+                <option>tipo 1</option>
+                <option>tipo 2</option>
+                <option>tipo 3</option>
+            </select>
+
+            <label>Tarifa Base:</label>
+            <input type="number" class="input">
+        </div>
+
+        <div class="form-row">
+            <label>Activo:</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="btn-container form-buttons">
+            <a href="" class="btn btn-gold">Limpiar</a>
+            <a href="servicios.html" class="btn btn-gold">Registrar</a>
+            <a href="servicios.html" class="btn btn-gold">Cancelar</a>
+        </div>
+
+    </form>
+
+    <script>
+        if (window.parent && window.parent.setSectionTitle) {
+            window.parent.setSectionTitle("Registrar Servicio");
+        }
+    </script>
+
+
+</body>
+</html>

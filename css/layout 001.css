@@ -1,0 +1,88 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ----- LAYOUT PRINCIPAL ----- */
+.layout {
+    flex: 1;
+    display: flex;
+}
+
+/* ----- SIDEBAR ----- */
+.sidebar {
+    width: 220px;
+    background: #222;
+    color: white;
+    min-height: calc(100vh - 60px); /* menos el footer */
+    padding: 1rem;
+}
+
+.menu-title {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: .8rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* ----- AREA PRINCIPAL DERECHA ----- */
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado */
+.header {
+    background: #eee;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Contenido */
+.content {
+    flex: 1;
+    padding: 1rem;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 180px); /* ajusta al gusto */
+    border: none;
+    background: white;
+    border-radius: 5px;
+}
+
+/* ----- FOOTER ----- */
+.footer {
+    background: #222;
+    color: white;
+    padding: .7rem;
+    text-align: center;
+    height: 60px;
+}

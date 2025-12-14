@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar paquete</title>
+    <!-- Usa solo uno -->
+    <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+    <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+
+</head>
+<body>
+
+    <h2 class="danger-title">Eliminar paquete</h2>
+
+<p class="danger-text">
+    Estás a punto de eliminar el siguiente servicio.  
+    Esta acción es <strong>irreversible</strong>.
+</p>
+
+<div class="service-delete-layout">
+    <!-- COLUMNA IZQUIERDA: INFO -->
+    <div class="details-card danger-card">
+
+        <div class="details-row">
+            <span class="details-label">Código:</span>
+            <span class="details-value">PQ002</span>
+        </div>
+
+        <div class="details-row">
+            <span class="details-label">Nombre:</span>
+            <span class="details-value">Paqute 1</span>
+        </div>
+
+        <div class="details-row">
+            <span class="details-label">Precio:</span>
+            <span class="details-value">$1,500</span>
+        </div>
+
+        <div class="details-row">
+            <span class="details-label">Activo:</span>
+            <span class="details-value">Sí</span>
+        </div>
+    </div>
+</div>
+
+<!-- BOTONES -->
+<div class="btn-container form-buttons danger-actions">
+    <a href="paquetes.html" class="btn btn-outline">Cancelar</a>
+    <a href="paquetes.html" class="btn btn-danger">Eliminar Servicio</a>
+</div>
+
+
+    <script>
+        if (window.parent && window.parent.setSectionTitle) {
+            window.parent.setSectionTitle("Eliminar Servicio");
+        }
+    </script>
+
+</body>
+</html>

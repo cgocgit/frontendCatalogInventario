@@ -1,0 +1,251 @@
+/* ============================================
+   MESA REGIA — ESTILO C
+   LIGHT PREMIUM (White + Gold)
+   ============================================ */
+
+/* ------------------ VARIABLES ------------------ */
+:root {
+    --mr-gold: #D4AF37;
+    --mr-gold-dark: #B38A2A;
+    --mr-gold-soft: #C8A55A;
+
+    --mr-black: #000000;
+    --mr-carbon: #121212;
+    --mr-white: #FFFFFF;
+
+    --font-primary: "Cinzel", serif;
+    --font-secondary: "Lato", sans-serif;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 56px;
+    --space-7: 72px;
+
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    --shadow-soft: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ------------------ RESET ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* evita scroll global */
+
+    font-family: var(--font-secondary);
+    background: var(--mr-white);
+    color: var(--mr-black);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ------------------ LAYOUT ------------------ */
+.layout {
+    flex: 1;
+    display: flex;
+    height: 100vh;
+}
+
+/* ------------------ SIDEBAR ------------------ */
+.sidebar {
+    width: 240px;
+    background: var(--mr-black);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--space-4);
+    border-right: 2px solid var(--mr-gold);
+}
+
+.menu-title {
+    color: var(--mr-gold);
+    font-family: var(--font-primary);
+    font-size: 22px;
+    margin-bottom: var(--space-3);
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: var(--space-2);
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--mr-white);
+    display: block;
+    font-size: 16px;
+    padding: var(--space-1) 0;
+    transition: 0.25s ease;
+}
+
+.menu a:hover {
+    color: var(--mr-gold);
+    padding-left: var(--space-2);
+}
+
+/* ------------------ SUBMENU ------------------ */
+.submenu {
+    margin-bottom: 16px;
+}
+
+.submenu-title {
+    color: var(--mr-gold);
+    font-weight: bold;
+    cursor: default;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.submenu ul {
+    list-style: none;
+    margin-left: 12px;
+}
+
+.submenu ul li a {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.submenu ul li a:hover {
+    opacity: 1;
+}
+
+/* ------------------ MAIN AREA ------------------ */
+.main-area {
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===============================================
+   HEADER COMPLETO — Estilo C (Light Premium)
+   =============================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--mr-white);
+    color: var(--mr-black);
+    padding: 14px 20px;
+    border-bottom: 3px solid var(--mr-gold);
+    height: 85px;
+}
+
+.header h1 {
+    font-family: var(--font-primary);
+    color: var(--mr-black);
+    font-size: 28px;
+}
+
+/* LOGO Y NOMBRE */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-logo {
+    height: 55px;
+}
+
+.header-title {
+    font-family: var(--font-primary);
+    font-size: 26px;
+    margin: 0;
+    color: var(--mr-black);
+}
+
+/* TÍTULO DE SECCIÓN */
+.header-section-title {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    color: var(--mr-black);
+}
+
+/* LADO DERECHO */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.header-info {
+    font-size: 13px;
+    text-align: right;
+    opacity: 0.7;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: var(--mr-black);
+}
+
+.profile-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--mr-gold);
+}
+
+.logout-btn {
+    background: var(--mr-gold);
+    color: var(--mr-black);
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: var(--mr-gold-soft);
+}
+
+/* ------------------ CONTENT ------------------ */
+.content {
+    padding: var(--space-4);
+    flex: 1;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 200px);
+    border: none;
+    background: var(--mr-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+/* ------------------ FOOTER ------------------ */
+.footer {
+    background: var(--mr-black);
+    color: var(--mr-white);
+    text-align: center;
+    padding: var(--space-2);
+    border-top: 2px solid var(--mr-gold);
+    font-size: 14px;
+    
+    flex-shrink: 0;
+}

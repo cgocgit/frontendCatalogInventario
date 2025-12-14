@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Servicio en Paquete</title>
+
+  <!-- Seleccionar solo uno -->
+  <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+  <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+
+</head>
+
+<body>
+
+  <h2>Registro de Servicio en Paquete</h2>
+
+  <div class="service-view-layout-complet">
+
+    <h3>Paquete</h3>
+    <div class="details-card-width">
+
+      <div class="details-row">
+        <span class="details-label">Código:</span>
+        <span class="details-value">SRV001</span>
+        <span class="details-label">Nombre:</span>
+        <span class="details-value">Decoración</span>
+        <span class="details-label">Activo:</span>
+        <span class="details-value">Sí</span>
+        <span class="details-label">Tipo:</span>
+        <span class="details-value">Ambientación</span>
+      </div>
+
+      <div class="details-row">
+        <span class="details-label">Tarifa Base:</span>
+        <span class="details-value">$1500</span>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Agregar servicio</h3>
+  <form class="form">
+
+    <div class="form-row">
+      <label>Servicio:</label>
+      <select>
+        <option>Servicio 1</option>
+        <option>Servicio 2</option>
+        <option>Servicio 3</option>
+        <option>Servicio 4</option>
+      </select>
+
+      <label>Cantidad:</label>
+      <input type="number" class="input">
+
+      <label>Precio Unitario:</label>
+      <input type="number" class="input">
+    </div>
+
+    <div class="btn-container form-buttons">
+      <a href="" class="btn btn-gold">Limpiar</a>
+      <a href="paquetes_ver.html" class="btn btn-gold">Registrar</a>
+      <a href="paquetes_ver.html" class="btn btn-gold">Cancelar</a>
+    </div>
+
+  </form>
+
+  <script>
+    if (window.parent && window.parent.setSectionTitle) {
+      window.parent.setSectionTitle("Registrar Servicio");
+    }
+  </script>
+
+
+</body>
+
+</html>

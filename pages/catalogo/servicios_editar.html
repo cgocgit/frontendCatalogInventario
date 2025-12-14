@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Servicio</title>
+
+  <!-- Elegir solo uno -->
+  <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+  <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+
+</head>
+
+<body>
+
+  <h2>Editar Servicio</h2>
+
+  <form class="form">
+    <h3 class="form-row">Datos de servicio:</h3>
+    <div class="form-row">
+      <label>Código:</label>
+      <input type="text" class="input" value="SRV001" disabled>
+
+      <label>Nombre:</label>
+      <input type="text" class="input" value="Decoración">
+    </div>
+
+    <div class="form-row">
+      <label>Tipo:</label>
+      <select class="input">
+        <option>Ambientación</option>
+        <option>Catering</option>
+        <option>Mobiliario</option>
+      </select>
+
+      <label>Tarifa Base:</label>
+      <input type="number" class="input" value="1500">
+
+      <label>Activo:</label>
+      <input type="checkbox" checked>
+    </div>
+  </form>
+
+  <div class="btn-container form-buttons">
+    <a href="servicios_ver.html" class="btn btn-gold">Cancelar</a>
+    <a href="servicios.html" class="btn btn-gold">Guardar Cambios</a>
+  </div>
+
+  <div class="gallery-card">
+    <div class="gallery-header">
+      <h3>Galería de Imágenes:</h3>
+      <label class="btn btn-gold btn-upload">
+        Agregar imagen
+        <input type="file" multiple accept="image/*" hidden>
+      </label>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-item">
+        <img src="../../assets/img/servicios/img1.jpg">
+        <span class="watermark">Mesa Regia</span>
+
+        <div class="gallery-actions">
+          <button class="gallery-btn delete">🗑</button>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="../../assets/img/servicios/img1.jpg">
+        <span class="watermark">Mesa Regia</span>
+
+        <div class="gallery-actions">
+          <button class="gallery-btn delete">🗑</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    if (window.parent && window.parent.setSectionTitle) {
+      window.parent.setSectionTitle("Editar Servicio");
+    }
+  </script>
+
+  <script>
+    const input = document.querySelector('.btn-upload input');
+    const gallery = document.getElementById('galleryGrid');
+
+    function createGalleryItem(src) {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+
+      item.innerHTML = `
+                <img src="${src}">
+                <span class="watermark">Mesa Regia</span>
+                <div class="gallery-actions">
+                    <button class="gallery-btn delete">🗑</button>
+                </div>
+            `;
+      return item;
+    }
+
+    input.addEventListener('change', () => {
+      Array.from(input.files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          gallery.appendChild(createGalleryItem(e.target.result));
+        };
+        reader.readAsDataURL(file);
+      });
+      input.value = '';
+    });
+
+    gallery.addEventListener('click', e => {
+      if (e.target.classList.contains('delete')) {
+        e.target.closest('.gallery-item').remove();
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

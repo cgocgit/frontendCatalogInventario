@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edición de Inventarios | Mesa Regia</title>
+
+  <!-- CSS principal del sistema -->
+  <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+</head>
+
+<body data-title="Inventarios">
+
+  <h2>Editar Inventario</h2>
+
+  <!-- TARJETA DE DETALLES -->
+  <div class="details-card">
+
+    <!-- ID INVENTARIO (OCULTO) -->
+    <input type="hidden" id="idInventario" value="1">
+
+    <!-- ARTÍCULO (NO EDITABLE) -->
+    <div class="form-row">
+      <label>Artículo</label>
+      <input type="text" value="Silla AvantGarden" disabled>
+    </div>
+
+    <!-- CÓDIGO DE UNIDAD (NO EDITABLE) -->
+    <div class="form-row">
+      <label>Código de Unidad</label>
+      <input type="text" value="art4" disabled>
+    </div>
+
+    <!-- ESTATUS -->
+    <div class="form-row">
+      <label>Estatus</label>
+      <select id="estatus">
+        <option value="DISPONIBLE">DISPONIBLE</option>
+        <option value="RESERVADO">RESERVADO</option>
+        <option value="DAÑADO">DAÑADO</option>
+        <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+        <option value="LIMPIEZA">LIMPIEZA</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- BOTONES -->
+  <div class="btn-container">
+    <a href="inventario.html" class="btn btn-outline">
+      Cancelar
+    </a>
+    <a href="inventario.html" class="btn btn-gold">
+      Actualizar
+    </a>
+  </div>
+
+</body>
+
+</html>

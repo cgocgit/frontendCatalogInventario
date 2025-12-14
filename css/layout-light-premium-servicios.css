@@ -1,0 +1,503 @@
+/* ============================================
+   MESA REGIA — ESTILO C (PÁGINA SERVICIOS)
+   LIGHT PREMIUM (White + Gold)
+   Archivo: layout-light-premium-servicios.css
+   ============================================ */
+
+/* ------------------ VARIABLES ------------------ */
+:root {
+    --mr-gold: #D4AF37;
+    --mr-gold-soft: #C8A55A;
+    --mr-black: #000000;
+    --mr-carbon: #222222;
+    --mr-white: #FFFFFF;
+
+    --font-primary: "Cinzel", serif;
+    --font-secondary: "Lato", sans-serif;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+
+    --radius-md: 8px;
+    --shadow-soft: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* ------------------ RESET ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background: var(--mr-white);
+    color: var(--mr-black);
+    padding: var(--space-3);
+}
+
+/* ------------------ TITULOS ------------------ */
+h2 {
+    font-family: var(--font-primary);
+    color: var(--mr-black);
+    border-bottom: 2px solid var(--mr-gold);
+    padding-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
+}
+
+/* ------------------ BOTÓN REGISTRAR ------------------ */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-weight: bold;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-gold {
+    background: var(--mr-gold);
+    color: var(--mr-black);
+}
+
+.btn-gold:hover {
+    background: var(--mr-gold-soft);
+}
+
+.btn-container {
+    margin-bottom: 20px;
+}
+
+/* ------------------ TABLA DE SERVICIOS ------------------ */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-3);
+    background: var(--mr-white);
+    box-shadow: var(--shadow-soft);
+}
+
+.table thead {
+    background: var(--mr-white);
+    color: var(--mr-black);
+    border-bottom: 2px solid var(--mr-gold);
+}
+
+.table th {
+    padding: 12px;
+    text-align: left;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    border-bottom: 2px solid var(--mr-gold);
+}
+
+.table td {
+    padding: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* -------- ACCIONES: VER / EDITAR / ELIMINAR -------- */
+.action-link {
+    color: var(--mr-gold);
+    text-decoration: none;
+    margin-right: 14px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   TABLA CON SCROLL Y HEADER FIJO
+   ================================ */
+
+.table-container {
+    max-height: 267px;          /* Ajustable */
+    overflow-y: auto;
+    border: 1px solid var(--mr-gold);
+    border-radius: var(--radius-md);
+}
+
+/* Evita que el header se desplace */
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* HEADER FIJO DE TABLA */
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: var(--mr-white);          /* Fondo sólido */
+    color: var(--mr-black);
+    border-bottom: 2px solid var(--mr-gold);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);   /* Sombra leve */
+}
+
+/* ================================
+   FORMULARIO DE REGISTRO
+   ================================ */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+label {
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.input {
+    padding: 8px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--mr-gold);
+    background: var(--mr-white);
+    color: var(--mr-black);
+    min-width: 200px;
+}
+
+.input:focus {
+    outline: 2px solid var(--mr-gold);
+}
+
+/* Separación de botones */
+.form-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+}
+
+/* ================================
+   DETALLE (VER SERVICIO)
+   ================================ */
+
+.details-card {
+    border: 1px solid var(--mr-gold);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    background: var(--mr-white);
+    color: var(--mr-black);
+    box-shadow: var(--shadow-soft);
+    max-width: 600px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.details-row:last-child {
+    border-bottom: none;
+}
+
+.details-label {
+    font-weight: bold;
+    font-family: var(--font-primary);
+}
+
+.details-value {
+    font-weight: normal;
+}
+
+/* ================================
+   ELIMINAR SERVICIO
+   ================================ */
+
+.delete-card {
+    border: 1px solid var(--mr-gold);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    background: var(--mr-white);
+    color: var(--mr-black);
+    box-shadow: var(--shadow-soft);
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.delete-warning {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    color: var(--mr-black);
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--mr-gold);
+    padding-bottom: 8px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.details-row:last-child {
+    border-bottom: none;
+}
+
+.details-label {
+    font-weight: bold;
+    font-family: var(--font-primary);
+}
+
+.details-value {
+    color: var(--mr-black);
+}
+
+/* ================================
+   VISTA SERVICIO + GALERÍA
+   ================================ */
+
+.service-view-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.service-view-layout-complet {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+/* TARJETA GALERÍA */
+.gallery-card {
+    border: 1px solid var(--mr-gold);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    background: var(--mr-white);
+    box-shadow: var(--shadow-soft);
+}
+
+.gallery-title {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--mr-gold);
+    padding-bottom: 6px;
+}
+
+/* GRID DE IMÁGENES */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--mr-gold);
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .service-view-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   GALERÍA EDITABLE
+   ================================ */
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.btn-upload {
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* ITEM */
+.gallery-item {
+    position: relative;
+}
+
+.gallery-actions {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    gap: 6px;
+}
+
+/* BOTONES */
+.gallery-btn {
+    background: rgba(0,0,0,0.7);
+    color: var(--mr-gold);
+    border: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.gallery-btn:hover {
+    background: var(--mr-gold);
+    color: var(--mr-black);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    font-family: var(--font-primary);
+    font-size: 26px;
+    color: rgba(212, 175, 55, 0.35);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ================================
+   ELIMINAR SERVICIO — ESTILO
+   ================================ */
+
+.service-delete-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 20px 0;
+}
+
+/* TÍTULOS DE ALERTA */
+.danger-title {
+    color: var(--mr-gold);
+}
+
+.danger-text {
+    margin-bottom: 16px;
+    color: #555;
+}
+
+/* TARJETA ALERTA */
+.danger-card {
+    border: 2px solid var(--mr-gold);
+    background: rgba(212, 175, 55, 0.08);
+}
+
+/* BOTONES */
+/* ================================
+   BOTÓN ACCIÓN CRÍTICA — MESA REGIA
+   ================================ */
+
+.btn-danger {
+    background: var(--mr-black);
+    color: var(--mr-gold);
+    border: 2px solid var(--mr-gold);
+    font-weight: 600;
+}
+
+.btn-danger:hover {
+    background: var(--mr-gold);
+    color: var(--mr-black);
+}
+
+
+.btn-outline {
+    border: 1px solid var(--mr-gold);
+    background: transparent;
+    color: var(--mr-gold);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .service-delete-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   RELACIÓN DE IMÁGENES (ELIMINAR)
+   ================================ */
+
+/* ================================
+   RELACIÓN DE IMÁGENES — MESA REGIA
+   ================================ */
+
+.image-relation-card {
+    border: 2px solid var(--mr-gold);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    background: rgba(212, 175, 55, 0.06); /* dorado muy sutil */
+}
+
+/* CONTADOR */
+.image-count {
+    font-size: 14px;
+    color: var(--mr-gold);
+}
+
+/* LISTADO */
+.image-relation-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+}
+
+.image-relation-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--mr-gold);
+    font-size: 14px;
+}
+
+.image-relation-list li:last-child {
+    border-bottom: none;
+}
+
+.image-name {
+    font-weight: 500;
+    color: var(--mr-black);
+}
+
+.image-meta {
+    color: #777;
+    font-size: 13px;
+}
+
+/* MENSAJE DE ADVERTENCIA */
+.image-warning {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--mr-black);
+    font-style: italic;
+    border-left: 3px solid var(--mr-gold);
+    padding-left: 10px;
+}
+

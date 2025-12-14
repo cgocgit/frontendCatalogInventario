@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Paquete</title>
+
+    <!-- Seleccionar solo uno -->
+    <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+    <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+
+</head>
+<body>
+
+    <h2>Registro de Paquete</h2>
+
+    <form class="form">
+
+        <div class="form-row">
+            <label>Código:</label>
+            <input type="text" class="input">
+            
+            <label>Nombre:</label>
+            <input type="text" class="input">
+        </div>
+
+        <div class="form-row">
+            <label>Precio:</label>
+            <input type="number" class="input">
+            
+            <label>Activo:</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="btn-container form-buttons">
+            <a href="" class="btn btn-gold">Limpiar</a>
+            <a href="paquetes.html" class="btn btn-gold">Registrar</a>
+            <a href="paquetes.html" class="btn btn-gold">Cancelar</a>
+        </div>
+
+    </form>
+
+    <script>
+        if (window.parent && window.parent.setSectionTitle) {
+            window.parent.setSectionTitle("Registrar Servicio");
+        }
+    </script>
+
+
+</body>
+</html>

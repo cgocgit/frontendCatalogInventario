@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Inventarios | Mesa Regia</title>
+
+  <!-- CSS principal del sistema -->
+  <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+</head>
+
+<body data-title="Inventarios">
+
+  <h2>Registro de Inventario</h2>
+
+  <!-- FORMULARIO -->
+  <div class="details-card">
+
+    <!-- ID INVENTARIO (OPCIONAL / OCULTO) -->
+    <input type="hidden" id="idInventario" value="">
+
+    <!-- ARTÍCULO -->
+    <div class="form-row">
+      <label>Artículo</label>
+      <select id="idArticulo">
+        <option value="">Seleccione un artículo</option>
+        <option value="2">Silla AvantGarden</option>
+        <option value="3">Mesa Redonda</option>
+      </select>
+    </div>
+
+    <!-- CÓDIGO DE UNIDAD -->
+    <div class="form-row">
+      <label>Código de Unidad</label>
+      <input type="text" id="codigoUnidad" placeholder="Ej. art4">
+    </div>
+
+  </div>
+
+  <!-- BOTONES -->
+  <div class="btn-container">
+    <a href="inventario.html" class="btn btn-outline">
+      Cancelar
+    </a>
+    <a href="inventario.html" class="btn btn-gold">
+      Registrar
+    </a>
+  </div>
+
+</body>
+
+</html>
