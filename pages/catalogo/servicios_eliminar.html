@@ -1,98 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Eliminar Servicio</title>
 
-    <!-- Usa solo uno -->
-    <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
-    <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Eliminar Servicio</title>
+
+  <!-- Usa solo uno -->
+  <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+  <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
 
 </head>
-<body>
 
-    <h2 class="danger-title">Eliminar Servicio</h2>
+<body data-title="Eliminar Servicio">
 
-<p class="danger-text">
-    Estás a punto de eliminar el siguiente servicio.  
+  <h2 class="danger-title">Eliminar Servicio</h2>
+
+  <p class="danger-text">
+    Estás a punto de eliminar el siguiente servicio.
     Esta acción es <strong>irreversible</strong>.
-</p>
+  </p>
 
-<div class="service-delete-layout">
+  <div class="service-delete-layout">
 
     <!-- COLUMNA IZQUIERDA: INFO -->
     <div class="details-card danger-card">
 
-        <div class="details-row">
-            <span class="details-label">Código:</span>
-            <span class="details-value">SRV001</span>
-        </div>
+      <div class="details-row">
+        <span class="details-label">Código:</span>
+        <span class="details-value" id="codigoServicio">SRV001</span>
+      </div>
 
-        <div class="details-row">
-            <span class="details-label">Nombre:</span>
-            <span class="details-value">Decoración</span>
-        </div>
+      <div class="details-row">
+        <span class="details-label">Nombre:</span>
+        <span class="details-value" id="nombreServicio">Decoración</span>
+      </div>
 
-        <div class="details-row">
-            <span class="details-label">Tipo:</span>
-            <span class="details-value">Ambientación</span>
-        </div>
+      <div class="details-row">
+        <span class="details-label">Tipo:</span>
+        <span class="details-value" id="tipoServicio">Ambientación</span>
+      </div>
 
-        <div class="details-row">
-            <span class="details-label">Tarifa Base:</span>
-            <span class="details-value">$1,500</span>
-        </div>
+      <div class="details-row">
+        <span class="details-label">Tarifa Base:</span>
+        <span class="details-value" id="tarifaServicio">$1,500</span>
+      </div>
 
-        <div class="details-row">
-            <span class="details-label">Activo:</span>
-            <span class="details-value">Sí</span>
-        </div>
+      <div class="details-row">
+        <span class="details-label">Activo:</span>
+        <span class="details-value" id="activoServicio">Sí</span>
+      </div>
 
     </div>
 
     <!-- RELACIÓN DE IMÁGENES -->
     <div class="image-relation-card">
 
-        <h3 class="gallery-title">
-            Imágenes asociadas
-            <span class="image-count">(3)</span>
-        </h3>
+      <h3 class="gallery-title">
+        Imágenes asociadas
+        <span class="image-count">(3)</span>
+      </h3>
 
-        <ul class="image-relation-list">
-            <li>
-                <span class="image-name">decoracion_01.jpg</span>
-                <span class="image-meta">JPG · 1.2 MB</span>
-            </li>
-            <li>
-                <span class="image-name">decoracion_02.png</span>
-                <span class="image-meta">PNG · 980 KB</span>
-            </li>
-            <li>
-                <span class="image-name">montaje_evento.jpg</span>
-                <span class="image-meta">JPG · 2.1 MB</span>
-            </li>
-        </ul>
+      <ul class="image-relation-list">
+        <li>
+          <span class="image-name">decoracion_01.jpg</span>
+          <span class="image-meta">JPG · 1.2 MB</span>
+        </li>
+        <li>
+          <span class="image-name">decoracion_02.png</span>
+          <span class="image-meta">PNG · 980 KB</span>
+        </li>
+        <li>
+          <span class="image-name">montaje_evento.jpg</span>
+          <span class="image-meta">JPG · 2.1 MB</span>
+        </li>
+      </ul>
 
-        <p class="image-warning">
-            Estas imágenes serán eliminadas junto con el servicio.
-        </p>
+      <p class="image-warning">
+        Estas imágenes serán eliminadas junto con el servicio.
+      </p>
 
     </div>
 
-</div>
+  </div>
 
-<!-- BOTONES -->
-<div class="btn-container form-buttons danger-actions">
-    <a href="servicios.html" class="btn btn-outline">Cancelar</a>
-    <a href="#" class="btn btn-danger">Eliminar Servicio</a>
-</div>
+  <!-- BOTONES -->
+  <div class="btn-container form-buttons danger-actions">
+    <button type="button" class="btn btn-gold" name="Cancelar"
+      data-page="pages/catalogo/servicios_ver.html">Cancelar</button>
+    <button type="button" class="btn btn-danger" id="btnEliminarServicio">
+      Eliminar Servicio
+    </button>
+  </div>
 
+  <div class="modal hidden" id="confirmServicio">
+    <div class="modal-content">
+      <h3>Confirmar registro</h3>
 
-    <script>
-        if (window.parent && window.parent.setSectionTitle) {
-            window.parent.setSectionTitle("Eliminar Servicio");
-        }
-    </script>
+      <p><strong>Código:</strong> <span id="cCodigo"></span></p>
+      <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
+      <p><strong>Tipo:</strong> <span id="cTipo"></span></p>
+      <p><strong>Tarifa base:</strong> <span id="cTarifa"></span></p>
+      <p><strong>Activo:</strong> <span id="status"></span></p>
 
+      <div class="modal-actions">
+        <button type="button" class="btn btn-gold" id="btnConfirmarEliminar">
+          Confirmar
+        </button>
+        <button type="button" class="btn" id="btnCancelar">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  </div>
+
+  <script type="module" src="js/servicios.js"></script>
 </body>
+
 </html>

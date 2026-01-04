@@ -1,133 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa Regia</title>
-    <link rel="stylesheet" href="css/layout.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa Regia</title>
+  <link rel="stylesheet" href="css/layout.css">
 </head>
+
 <body>
 
-    <div class="layout">
+  <div class="layout">
 
-        <!-- =================== SIDEBAR =================== -->
-        <aside class="sidebar">
-            <h2 class="menu-title">Mesa Regia</h2>
-            <ul class="menu">
+    <!-- =================== SIDEBAR =================== -->
+    <aside class="sidebar">
+      <h2 class="menu-title">Mesa Regia</h2>
+      <ul class="menu">
 
-                <!-- Inicio -->
-                <li><a href="pages/home.html" target="contentFrame">Inicio</a></li>
+        <!-- Inicio -->
+        <!--<li><a href="pages/home.html" target="contentFrame">Inicio</a></li>-->
+        <li><a href="#" class="menu-link" data-url="pages/home.html" data-page="pages/home.html">Inicio</a></li>
 
-                <!-- Catálogo -->
-                <li class="submenu">
-                    <span class="submenu-title">Catálogo</span>
-                    <ul>
-                        <li><a href="pages/catalogo/servicios.html" target="contentFrame">Servicios</a></li>
-                        <!--<li><a href="#" onclick="loadPage('pages/catalogo/servicios.html')">Servicios</a></li>-->
+        <!-- Catálogo -->
+        <li class="submenu">
+          <span class="submenu-title">Catálogo</span>
+          <ul>
+            <!--<li><a href="pages/catalogo/servicios.html" target="contentFrame">Servicios</a></li>-->
+            <li><a href="#" class="menu-link" data-url="pages/catalogo/servicios.html" data-page="pages/catalogo/servicios.html">Servicios</a></li>
 
-                        <li><a href="pages/catalogo/articulos.html" target="contentFrame">Artículo</a></li>
-                        <li><a href="pages/catalogo/paquetes.html" target="contentFrame">Paquetes</a></li>
-                    </ul>
-                </li>
+            <!--<li><a href="pages/catalogo/articulos.html" target="contentFrame">Artículo</a></li>-->
+            <li><a href="#" class="menu-link" data-url="pages/catalogo/articulos.html" data-page="pages/catalogo/articulos.html">Artículos</a></li>
 
-                <!-- Inventario -->
-                <li class="submenu">
-                    <span class="submenu-title">Inventario</span>
-                    <ul>
-                        <li><a href="pages/inventario/inventario.html" target="contentFrame">Inventario</a></li>
-                        <!--<li><a href="pages/inventario/almacen.html" target="contentFrame">Almacén</a></li>-->
-                    </ul>
-                </li>
+            <!--<li><a href="pages/catalogo/paquetes.html" target="contentFrame">Paquetes</a></li>-->
+            <li><a href="#" class="menu-link" data-url="pages/catalogo/paquetes.html" data-page="pages/catalogo/paquetes.html">Paquetes</a></li>
+          </ul>
+        </li>
 
-
-                <!-- Acerca -->
-                <li><a href="pages/about.html" target="contentFrame">Acerca</a></li>
-
-                <!-- Contacto -->
-                <li><a href="pages/contact.html" target="contentFrame">Contacto</a></li>
-
-            </ul>
-        </aside>
+        <!-- Inventario -->
+        <li class="submenu">
+          <span class="submenu-title">Inventario</span>
+          <ul>
+            <!--<li><a href="pages/inventario/inventario.html" target="contentFrame">Inventario</a></li>-->
+            <li><a href="#" class="menu-link" data-url="pages/inventario/inventario.html" data-page="pages/inventario/inventario.html">Inventario</a></li>
+            <!--<li><a href="pages/inventario/almacen.html" target="contentFrame">Almacén</a></li>-->
+          </ul>
+        </li>
 
 
-        <!-- =================== CONTENEDOR DERECHA =================== -->
-        <div class="main-area">
+        <!-- Acerca -->
+        <!--<li><a href="pages/about.html" target="contentFrame">Acerca</a></li>-->
+        <li><a href="#" class="menu-link" data-url="pages/about.html" data-page="pages/about.html">Acerca</a></li>
 
-            <!-- Encabezado -->
-            <header class="header">
+        <!-- Contacto -->
+        <!--<li><a href="pages/contact.html" target="contentFrame">Contacto</a></li>-->
+        <li><a href="#" class="menu-link" data-url="pages/contact.html" data-page="pages/contact.html">Contacto</a></li>
 
-                <!-- LOGO -->
-                <div class="header-left">
-                    <img src="assets/img/file.enc"
-             alt="Mesa Regia"
-             class="header-logo">
-                    <h1 class="header-title">Mesa Regia</h1>
-                </div>
-
-                <!-- TÍTULO DINÁMICO DE LA SECCIÓN -->
-                <div class="header-section-title">
-                    <span id="sectionTitle">Inicio</span>
-                </div>
-
-                <!-- INFORMACIÓN DEL USUARIO -->
-                <div class="header-right">
-                    <div class="header-info">
-                        <span class="header-date">11 diciembre 2025</span>
-                        <span class="header-location">Monterrey, Nuevo León</span>
-                    </div>
-
-                    <div class="header-user">
-                        <span class="user-name">Carlos Gilberto Olvera Casanova</span>
-                         <img src="assets/img/profile.png" class="profile-icon" alt="Perfil">
-                        <button class="logout-btn">Cerrar Sesión</button>
-                    </div>
-                </div>
-
-            </header>
+      </ul>
+    </aside>
 
 
-            <!-- Contenido dinámico -->
-            <main class="content">
-                <iframe name="contentFrame" src="pages/home.html"></iframe>
-            </main>
+    <!-- =================== CONTENEDOR DERECHA =================== -->
+    <div class="main-area">
 
+      <!-- Encabezado -->
+      <header class="header">
+
+        <!-- LOGO -->
+        <div class="header-left">
+          <img src="assets/img/file.enc" alt="Mesa Regia" class="header-logo">
+          <h1 class="header-title">Mesa Regia</h1>
         </div>
+
+        <!-- TÍTULO DINÁMICO DE LA SECCIÓN -->
+        <div class="header-section-title">
+          <span id="sectionTitle">Inicio</span>
+        </div>
+
+        <!-- INFORMACIÓN DEL USUARIO -->
+        <div class="header-right">
+          <div class="header-info">
+            <span id="headerDate" class="header-date">11 diciembre 2025</span>
+            <span class="header-location">Monterrey, Nuevo León</span>
+          </div>
+
+          <div class="header-user">
+            <span class="user-name">Carlos Gilberto Olvera Casanova</span>
+            <img src="assets/img/profile.png" class="profile-icon" alt="Perfil">
+            <button class="logout-btn">Cerrar Sesión</button>
+          </div>
+        </div>
+
+      </header>
+
+
+      <!-- Contenido dinámico -->
+      <main class="content">
+        <iframe name="contentFrame" src="pages/home.html"></iframe>
+      </main>
 
     </div>
 
-    <!-- =================== FOOTER GLOBAL =================== -->
-    <footer class="footer">
-        © 2025 Mesa Regia — Todos los derechos reservados.
-    </footer>
+  </div>
 
-    <script>
-        function setSectionTitle(title) {
-            const el = document.getElementById("sectionTitle");
-            if (el) el.textContent = title;
-        }
+  <!-- =================== FOOTER GLOBAL =================== -->
+  <footer class="footer">
+    © 2025 Mesa Regia — Todos los derechos reservados.
+  </footer>
 
-        function loadPage(url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
-                    const content = document.querySelector(".content");
-                    content.innerHTML = html;
-
-                    // 🔽 EXTRAER data-title DE LA PÁGINA CARGADA
-                    const temp = document.createElement("div");
-                    temp.innerHTML = html;
-
-                    const body = temp.querySelector("body");
-                    if (body && body.dataset.title) {
-                        setSectionTitle(body.dataset.title);
-                    } else {
-                        setSectionTitle("Mesa Regia");
-                    }
-                })
-                .catch(err => console.error("Error cargando página:", err));
-        }
-    </script>
-
+  <script src="js/app.js" defer></script>
+  <script type="module" src="js/pageMenu.js" defer></script>
 
 </body>
+
 </html>

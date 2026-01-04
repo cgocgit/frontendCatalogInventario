@@ -1,59 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro de Servicio</title>
 
-    <!-- Seleccionar solo uno -->
-    <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
-    <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Servicio</title>
+
+  <!-- Seleccionar solo uno -->
+  <!-- <link rel="stylesheet" href="../../css/layout-premium-black-gold-servicios.css"> -->
+  <link rel="stylesheet" href="../../css/layout-light-premium-servicios.css">
 
 </head>
-<body>
 
-    <h2>Registro de Servicio</h2>
+<body data-title="Registrar Servicio">
 
-    <form class="form">
+  <h2>Registro de Servicio</h2>
 
-        <div class="form-row">
-            <label>Código:</label>
-            <input type="text" class="input">
-            
-            <label>Nombre:</label>
-            <input type="text" class="input">
-        </div>
+  <div class="estado-servicio">
+    <span id="estadoServicio" class="badge badge-info">
+      Complete el formulario para registrar el servicio
+    </span>
+  </div>
+  
+  <form class="form" id="form-servicio" data-modo="registrar">
+    <div class="form-row">
+      <label class="required" for="codigo">Código</label>
+      <input type="text" id="codigo" name="codigo" required class="input">
 
-        <div class="form-row">
-            <label>Tipo:</label>
-            <select class="input">
-                <option>tipo 1</option>
-                <option>tipo 2</option>
-                <option>tipo 3</option>
-            </select>
+      <label class="required" for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required class="input">
+    </div>
 
-            <label>Tarifa Base:</label>
-            <input type="number" class="input">
-        </div>
+    <div class="form-row">
+      <label class="required" for="tipo">Tipo</label>
+      <select id="tipo" name="tipo" required class="input">
+        <option value="">Seleccione un tipo</option>
+        <option value="1">tipo 1</option>
+        <option value="2">tipo 2</option>
+        <option value="3">tipo 3</option>
+      </select>
 
-        <div class="form-row">
-            <label>Activo:</label>
-            <input type="checkbox">
-        </div>
+      <label class="required" for="tarifaBase">Tarifa base</label>
+      <input type="text" id="tarifaBase" name="tarifaBase" data-currency="mxn" required inputmode="numeric"
+        placeholder="$ 0.00 MXN" pattern="^\$\s\d+(\.\d{2})\sMXN$" title="Formato requerido: $ 10.00 MXN"
+        class="input" />
+    </div>
 
-        <div class="btn-container form-buttons">
-            <a href="" class="btn btn-gold">Limpiar</a>
-            <a href="servicios.html" class="btn btn-gold">Registrar</a>
-            <a href="servicios.html" class="btn btn-gold">Cancelar</a>
-        </div>
+    <div class="form-row">
+      <label class="check-container">
+        <input type="checkbox" disabled checked>
+        <span class="checkmark"></span>
+        Activo
+      </label>
+    </div>
 
-    </form>
+    <div class="btn-container form-buttons">
+      <button type="reset" class="btn btn-gold" name="Limpiar">Limpiar</button>
+      <button type="submit" class="btn btn-gold" name="Registrar">Registrar</button>
+      <button type="button" class="btn btn-gold" name="Cancelar"
+        data-page="pages/catalogo/servicios.html">Cancelar</button>
+    </div>
 
-    <script>
-        if (window.parent && window.parent.setSectionTitle) {
-            window.parent.setSectionTitle("Registrar Servicio");
-        }
-    </script>
+  </form>
+
+  <div class="modal hidden" id="confirmServicio">
+    <div class="modal-content">
+      <h3>Confirmar registro</h3>
+
+      <p><strong>Código:</strong> <span id="cCodigo"></span></p>
+      <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
+      <p><strong>Tipo:</strong> <span id="cTipo"></span></p>
+      <p><strong>Tarifa base:</strong> <span id="cTarifa"></span></p>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-gold" id="btnConfirmar">
+          Confirmar
+        </button>
+        <button type="button" class="btn" id="btnCancelar">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
 
 
+  <script src="js/servicios.js"></script>
 </body>
+
 </html>

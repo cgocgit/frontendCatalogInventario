@@ -11,40 +11,54 @@
 
 </head>
 
-<body>
+<body data-title="Editar Servicio">
 
   <h2>Editar Servicio</h2>
 
-  <form class="form">
+  <div class="estado-servicio">
+    <span id="estadoServicio" class="badge badge-info">
+      Complete el formulario para registrar el servicio
+    </span>
+  </div>
+
+  <form class="form" id="form-servicio" data-modo="editar">
     <h3 class="form-row">Datos de servicio:</h3>
     <div class="form-row">
-      <label>Código:</label>
-      <input type="text" class="input" value="SRV001" disabled>
+      <label class="required" for=>Código:</label>
+      <input type="text" id="codigo" name="codigo" required class="input" value="SRV001" disabled>
 
-      <label>Nombre:</label>
-      <input type="text" class="input" value="Decoración">
+      <label class="required" for="">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required class="input" value="Decoración">
     </div>
 
     <div class="form-row">
-      <label>Tipo:</label>
-      <select class="input">
+      <label class="required" for="">Tipo:</label>
+      <select id="tipo" name="tipo" required class="input">
         <option>Ambientación</option>
         <option>Catering</option>
         <option>Mobiliario</option>
       </select>
 
-      <label>Tarifa Base:</label>
-      <input type="number" class="input" value="1500">
+      <label class="required" for="tarifaBase">Tarifa base</label>
+      <input type="text" id="tarifaBase" name="tarifaBase" data-currency="mxn" required inputmode="numeric"
+        placeholder="$ 0.00 MXN" pattern="^\$\s\d+(\.\d{2})\sMXN$" title="Formato requerido: $ 10.00 MXN"
+        class="input" />
 
-      <label>Activo:</label>
-      <input type="checkbox" checked>
+      <label class="check-container">
+        <input type="checkbox" id="servicioActivo" name="activo" disabled checked>
+        <span class="checkmark"></span>
+        Activo
+      </label>
+    </div>
+
+    <div class="btn-container form-buttons">
+      <button type="button" class="btn btn-gold" name="Cancelar"
+        data-page="pages/catalogo/servicios_ver.html">Cancelar</button>
+      <button type="submit" class="btn btn-gold" name="guardarCambios">Guardar Cambios</button>
     </div>
   </form>
 
-  <div class="btn-container form-buttons">
-    <a href="servicios_ver.html" class="btn btn-gold">Cancelar</a>
-    <a href="servicios.html" class="btn btn-gold">Guardar Cambios</a>
-  </div>
+
 
   <div class="gallery-card">
     <div class="gallery-header">
@@ -79,12 +93,26 @@
 
   </div>
 
+  <div class="modal hidden" id="confirmServicio">
+    <div class="modal-content">
+      <h3>Confirmar registro</h3>
 
-  <script>
-    if (window.parent && window.parent.setSectionTitle) {
-      window.parent.setSectionTitle("Editar Servicio");
-    }
-  </script>
+      <p><strong>Código:</strong> <span id="cCodigo"></span></p>
+      <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
+      <p><strong>Tipo:</strong> <span id="cTipo"></span></p>
+      <p><strong>Tarifa base:</strong> <span id="cTarifa"></span></p>
+      <p><strong>Activo:</strong> <span id="status"></span></p>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-gold" id="btnConfirmar">
+          Confirmar
+        </button>
+        <button type="button" class="btn" id="btnCancelar">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script>
     const input = document.querySelector('.btn-upload input');
@@ -122,7 +150,7 @@
     });
   </script>
 
-
+  <script src="js/servicios.js" ></script>
 </body>
 
 </html>

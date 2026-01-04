@@ -40,7 +40,6 @@
 body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* evita scroll global */
 
     font-family: var(--font-secondary);
     background: var(--mr-white);
@@ -96,6 +95,10 @@ body {
     padding-left: var(--space-2);
 }
 
+.menu-link {
+    transition: all 0.2s ease-in-out;
+}
+
 /* ------------------ SUBMENU ------------------ */
 .submenu {
     margin-bottom: 16px;
@@ -124,12 +127,20 @@ body {
     opacity: 1;
 }
 
+.menu-link.active {
+    background-color: rgba(255, 255, 255, 0.12); /* un poco más visible */
+    color: #ffffff; /* texto blanco puro para contraste */
+    font-weight: 600;
+    border-left: 4px solid #c9a24d; /* dorado elegante */
+    padding-left: 12px;
+}
+
 /* ------------------ MAIN AREA ------------------ */
 .main-area {
     flex-direction: column;
     flex: 1;
     display: flex;
-    flex-direction: column;
+    height: 83vh; /* o 100% si su padre ya lo tiene */
 }
 
 /* ===============================================
@@ -227,11 +238,12 @@ body {
 .content {
     padding: var(--space-4);
     flex: 1;
+    overflow-y: auto;
 }
 
 iframe {
     width: 100%;
-    height: calc(100vh - 200px);
+    height: 100%; /*calc(100vh - 200px); */
     border: none;
     background: var(--mr-white);
     border-radius: var(--radius-md);
@@ -249,3 +261,33 @@ iframe {
     
     flex-shrink: 0;
 }
+
+
+/* Inputs */
+.content input:focus-visible,
+.content select:focus-visible,
+.content textarea:focus-visible {
+    border: 1px solid #c9a24d;
+    background-color: transparent;
+}
+
+/* Botones */
+.content a:focus-visible {
+    border: 1px solid #000000; /* negro */
+    padding: 4px 6px;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+
+/* Links (menú y contenido) */
+.sidebar .menu .menu-link:focus-visible {
+    text-decoration: underline;
+    text-decoration-color: #c9a24d; /* dorado */
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    color: #ffffff;
+}
+
+
+
